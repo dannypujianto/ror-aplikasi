@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Daftar Member</h1>
+
+
+<%= link_to 'New Member', new_member_path %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nama Depan</th>
+      <th>Nama Belakang</th>
+      <th>Berat Badan</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @members.each do |member| %>
+      <tr>
+        <td><%= member.fname %></td>
+        <td><%= member.lname %></td>
+        <td><%= member.wight %></td>
+        <td><%= link_to 'Show', member %></td>
+        <td><%= link_to 'Edit', edit_member_path(member) %></td>
+        <td><%= link_to 'Destroy', member, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
