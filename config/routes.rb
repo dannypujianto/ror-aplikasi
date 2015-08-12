@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
 
 
+  resources :orders
+  resources :customers
+  get 'about', to: 'about#index'
+
   resources :members
 
   root'home#index'
